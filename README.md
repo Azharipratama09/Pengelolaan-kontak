@@ -92,7 +92,46 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
     }
 ~~~
 • ItemListener untuk JComboBox kategori kontak
+~~~
+private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {                                             
+    // Periksa apakah item yang dipilih
+    if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+        // Ambil item yang dipilih
+        String selectedCategory = jComboBox1.getSelectedItem().toString();
+        
+        // Lakukan sesuatu berdasarkan kategori yang dipilih
+        switch (selectedCategory) {
+            case "Keluarga":
+                System.out.println("Anda memilih kategori: Keluarga");
+                break;
+            case "Pasangan":
+                System.out.println("Anda memilih kategori: Pasangan");
+                break;
+            case "Saudara":
+                System.out.println("Anda memilih kategori: Saudara");
+                break;
+            case "Teman":
+                System.out.println("Anda memilih kategori: Teman");
+                break;
+            case "Paman":
+                System.out.println("Anda memilih kategori: Paman");
+                break;
+            case "Tante":
+                System.out.println("Anda memilih kategori: Tante");
+                break;
+            case "Adek":
+                System.out.println("Anda memilih kategori: Adek");
+                break;
+            case "Sepupu":
+                System.out.println("Anda memilih kategori: Sepupu");
+                break;
+            default:
+                System.out.println("Kategori tidak dikenal: " + selectedCategory);
+        }
+    }
+}
 
+~~~
 ## 5. Variasi:
 • Tambahkan fitur pencarian kontak berdasarkan nama atau nomor telepon, lalu tampilkan hasilnya di JTable
 ~~~
